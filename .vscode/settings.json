@@ -3,19 +3,38 @@
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true,
     "**/.tanstack/**/*": true,
-    "pnpm-lock.yaml": true
+    "package-lock.json": true,
+    "pnpm-lock.yaml": true,
+    "node_modules": true,
+    "bun.lock": true,
+    ".output": true,
+    ".nitro": true,
+    "build": true,
+    "dist": true,
+    ".env": true
   },
   "files.watcherExclude": {
     "**/routeTree.gen.ts": true,
     "**/.tanstack/**/*": true,
-    "pnpm-lock.yaml": true
+    "package-lock.json": true,
+    "pnpm-lock.yaml": true,
+    "node_modules": true,
+    "bun.lock": true,
+    ".output": true,
+    ".nitro": true,
+    "build": true,
+    "dist": true,
+    ".env": true
   },
   "search.exclude": {
     "**/routeTree.gen.ts": true,
     "**/.tanstack/**/*": true,
+    "package-lock.json": true,
     "pnpm-lock.yaml": true,
     "node_modules": true,
+    "bun.lock": true,
     ".output": true,
+    ".nitro": true,
     "build": true,
     "dist": true,
     ".env": true

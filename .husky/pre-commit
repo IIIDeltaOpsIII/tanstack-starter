@@ -1,1 +1,13 @@
-pnpm validate
+if npm run validate; then
+    exit 0
+fi
+
+if pnpm validate; then
+    exit 0
+fi
+
+if bun run validate; then
+    exit 0
+fi
+
+exit 1

@@ -1,8 +1,8 @@
-# TanStack-Starter
+# 🏝️ TanStack-Starter
 
 ## Overview
 
-Starter template for TanStack Start applications.
+Starter template for [TanStack Start](https://tanstack.com/start/latest) applications.
 
 ## Development
 
@@ -87,7 +87,7 @@ docker system prune --force --all
 docker volume prune --force --all
 
 # build and run
-docker compose -f docker-compose.yaml up --build -d
+docker compose -f docker-compose.pnpm.yaml up --build -d
 ```
 
 **Node Utility Commands**

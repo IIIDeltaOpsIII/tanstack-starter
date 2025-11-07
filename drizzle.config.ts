@@ -6,9 +6,9 @@ import { ENVIRONMENTS } from '@/constants/env.constants'
 dotEnvConfig({ quiet: true })
 
 const config = defineConfig({
-  out: './src/lib/drizzle',
   breakpoints: false,
   dialect: 'postgresql',
+  out: './src/lib/drizzle',
   schema: './src/lib/database/schema',
   dbCredentials: {
     url: process.env.DATABASE_URL as string,

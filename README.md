@@ -2,97 +2,19 @@
 
 ## Overview
 
-Starter template for [TanStack Start](https://tanstack.com/start/latest) applications.
+Starter template for [TanStack Start](https://tanstack.com/start/latest) applications, batteries included.
 
 ## Development
 
-**PNPM Custom Commands**
+To quickly get started, see the [`quick start`](./docs/development/quick-start.md) guide.
 
-```bash
-# start app in dev mode
-pnpm dev
+For specific development commands, refer to one of the following:
 
-# build the app for prod
-pnpm build
+- [Developing with `npm`](./docs/commands/npm.md)
+- [Developing with `pnpm`](./docs/commands/pnpm.md)
+- [Developing with `bun`](./docs/commands/bun.md)
+- [Developing with `docker`](./docs/commands/docker.md)
 
-# start app in prod mode
-pnpm start
+## Contributors
 
-# format all the code
-pnpm format
-
-# initialize pre-commit
-pnpm prepare
-```
-
-**PNPM Utility Commands**
-
-```bash
-# verify all dependencies
-pnpm audit
-
-# update all dependencies
-pnpm update
-
-# check for latest versions
-pnpm outdated
-
-# check for unused dependencies
-pnpm dlx depcheck
-
-# approve prebuilts for pnpm
-pnpm approve-builds
-
-# run editorconfig fixes on files
-pnpm dlx eclint fix .
-
-# update major latest (alt: ncu -u)
-pnpm dlx npm-check-updates -u
-
-# install dependencies for modules
-pnpm install --frozen-lockfile
-
-# drizzle defined migration
-pnpm exec drizzle-kit generate
-
-# apply migrations to database
-pnpm exec drizzle-kit migrate
-
-# ignore arbitrary script executions
-pnpm config set ignore-scripts true
-
-# migrate biome configuration
-pnpm dlx @biomejs/biome migrate --write
-
-# drizzle custom migration
-pnpm exec drizzle-kit generate --custom
-
-# detect circular dependencies
-pnpm dlx dpdm --no-warning --no-tree **/*.ts
-
-# validate for react compiler compatibility
-pnpm dlx react-compiler-healthcheck@experimental
-```
-
-**Docker Utility Commands**
-
-```bash
-# quick start if no changes
-docker compose up
-
-# remove all containers
-docker system prune --force --all
-
-# remove all volumes
-docker volume prune --force --all
-
-# build and run
-docker compose -f docker-compose.pnpm.yaml up --build -d
-```
-
-**Node Utility Commands**
-
-```bash
-# generic secret generator
-node -e "console.log(require('crypto').randomBytes(32).toString('base64url'))"
-```
+ - [`@jackytea`](https://github.com/jackytea)

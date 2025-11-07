@@ -1,0 +1,100 @@
+## **Quick Start Development Guide**
+
+### **1 .Prerequisites**
+
+Ensure you have one of the following programs installed on your machine:
+
+- [Docker](https://www.docker.com/)
+- [Node](https://nodejs.org/)
+- [Bun](https://bun.sh/)
+
+### **2. Environment**
+
+Ensure you have these values populated in your `.env` file:
+
+```bash
+# app config
+APP_PORT=
+APP_HOST=
+NITRO_PORT=
+VITE_BASE_URL=
+VITE_COOKIE_EXPIRY_DATE=
+
+# database credentials
+DATABASE_URL=
+DATABASE_NAME=
+DATABASE_USER=
+DATABASE_PORT=
+DATABASE_HOST=
+DATABASE_SCHEMA=
+DATABASE_PASSWORD=
+
+# auth config
+BETTER_AUTH_URL=
+BETTER_AUTH_SECRET=
+BETTER_AUTH_JWT_SECRET=
+
+# discord oauth
+DISCORD_CLIENT_ID=
+DISCORD_CLIENT_SECRET=
+
+# google oauth
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+
+# github oauth
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+```
+
+## **3. Database**
+
+Ensure you have a [Postgres](https://www.postgresql.org/) database instance running to ensure migrations are ran.
+
+### **4. Running The App**
+
+To get up and running with this template you can run one of the following commands:
+
+**Unix Commands**:
+
+If you are using [`npm`](https://www.npmjs.com/package/npm):
+```bash
+npm install && npx drizzle-kit migrate && npm run dev
+```
+
+If you are using [`pnpm`](https://www.npmjs.com/package/pnpm):
+```bash
+pnpm install  && pnpm exec drizzle-kit migrate && pnpm dev
+```
+
+If you are using [`bun`](https://www.npmjs.com/package/bun):
+```bash
+bun install && bunx drizzle-kit migrate && bun run dev
+```
+
+If you are using [`docker`](https://docker.com):
+```bash
+docker compose -f docker-compose.<npm | pnpm | bun>.yaml up --build -d
+```
+
+**PowerShell Commands**:
+
+If you are using [`npm`](https://www.npmjs.com/package/npm):
+```powershell
+npm install && npx drizzle-kit migrate && npm run dev
+```
+
+If you are using [`pnpm`](https://www.npmjs.com/package/pnpm):
+```powershell
+pnpm install && pnpm exec drizzle-kit migrate && pnpm dev
+```
+
+If you are using [`bun`](https://www.npmjs.com/package/bun):
+```powershell
+bun install && bunx drizzle-kit migrate && bun run dev
+```
+
+If you are using [`docker`](https://docker.com):
+```powershell
+docker compose -f docker-compose.<npm | pnpm | bun>.yaml up --build -d
+```

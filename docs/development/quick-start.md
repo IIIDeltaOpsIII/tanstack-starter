@@ -51,6 +51,12 @@ GITHUB_CLIENT_SECRET=
 
 Ensure you have a [Postgres](https://www.postgresql.org/) database instance running to ensure migrations are ran.
 
+If you have [Docker](https://www.docker.com/) installed, you can spin up a database with the following command:
+
+```bash
+docker compose -f docker-compose.postgres.yaml up --build -d
+```
+
 ### **4. Running The App**
 
 To get up and running with this template you can run one of the following commands:
@@ -81,17 +87,17 @@ docker compose -f docker-compose.<npm | pnpm | bun>.yaml up --build -d
 
 If you are using [`npm`](https://www.npmjs.com/package/npm):
 ```powershell
-npm install && npx drizzle-kit migrate && npm run dev
+npm install; if ($?) { npx drizzle-kit migrate }; if ($?) { npm run dev }
 ```
 
 If you are using [`pnpm`](https://www.npmjs.com/package/pnpm):
 ```powershell
-pnpm install && pnpm exec drizzle-kit migrate && pnpm dev
+pnpm install; if ($?) { pnpm exec drizzle-kit migrate }; if ($?) { pnpm dev }
 ```
 
 If you are using [`bun`](https://www.npmjs.com/package/bun):
 ```powershell
-bun install && bunx drizzle-kit migrate && bun run dev
+bun install; if ($?) { bunx drizzle-kit migrate }; if ($?) { bun run dev }
 ```
 
 If you are using [`docker`](https://docker.com):

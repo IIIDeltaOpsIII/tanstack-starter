@@ -1,0 +1,11 @@
+{
+  "translation": {
+    "Application": "应用",
+    "Hello!": "你好!",
+    "Welcome to": "欢迎使用",
+    "Login with": "使用以下方式登录",
+    "You are logged in.": "您已登录.",
+    "Sign out": "退出登录",
+    "Login to get started!": "登录以开始使用!"
+  }
+}

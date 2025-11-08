@@ -1,8 +1,10 @@
 import { useRouter } from '@tanstack/react-router'
 import { LogOut } from 'lucide-react'
 import { ReactNode, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { loginWithSocialProvider, logoutSession } from '@/auth/utils/auth.utils'
 import { LoadingSpinner } from '@/components/LoadingSpinner/LoadingSpinner'
+import { APP } from '@/constants/app.constants'
 import { AUTH_PROVIDERS } from '@/constants/auth.constants'
 import { AppLayout } from '@/layouts/AppLayout/AppLayout'
 import { Route as RootRoute } from '@/routes/__root'
@@ -14,7 +16,7 @@ const socialLoginButtons = [
   {
     disabled: false,
     provider: AUTH_PROVIDERS.GOOGLE,
-    text: 'Login with Google',
+    text: 'Google',
     icon: (
       <svg
         width="800px"
@@ -56,7 +58,7 @@ const socialLoginButtons = [
   {
     disabled: false,
     provider: AUTH_PROVIDERS.GITHUB,
-    text: 'Login with GitHub',
+    text: 'GitHub',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path
@@ -69,7 +71,7 @@ const socialLoginButtons = [
   {
     disabled: false,
     provider: AUTH_PROVIDERS.DISCORD,
-    text: 'Login with Discord',
+    text: 'Discord',
     icon: (
       <svg
         width="800px"
@@ -99,6 +101,7 @@ const socialLoginButtons = [
 
 const Auth = () => {
   const router = useRouter()
+  const { t } = useTranslation()
   const { user, queryClient } = RootRoute.useRouteContext()
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -123,7 +126,7 @@ const Auth = () => {
       >
         <div className="flex items-center justify-center gap-2">
           <LogOut className="h-4 w-4" />
-          <span>Log out</span>
+          <span>{t('Sign out')}</span>
         </div>
       </Button>
     ) : (
@@ -138,7 +141,9 @@ const Auth = () => {
           >
             <div className="flex items-center justify-center gap-2">
               {socialLoginButton.icon}
-              <span>{socialLoginButton.text}</span>
+              <span>
+                {t('Login with')} {socialLoginButton.text}
+              </span>
             </div>
           </Button>
         ))}
@@ -152,10 +157,10 @@ const Auth = () => {
         <div className="flex w-full flex-col gap-6 sm:w-96">
           <Card>
             <CardHeader className="text-center">
-              <CardTitle className="text-xl">Welcome to TanStack-Starter!</CardTitle>
-              <CardDescription>
-                {user ? 'You are already logged in.' : 'Login with your Google, Github or Discord account.'}
-              </CardDescription>
+              <CardTitle className="text-xl">
+                {t('Welcome to')} {t(APP.NAME)}
+              </CardTitle>
+              <CardDescription>{user ? t('You are logged in.') : t('Login to get started!')}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid h-40 w-full gap-6">

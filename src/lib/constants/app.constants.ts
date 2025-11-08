@@ -1,5 +1,5 @@
 const APP = {
-  NAME: 'TanStack Starter',
+  NAME: 'Application',
   DOMAIN: import.meta.env.VITE_BASE_URL as string
 } as const
 

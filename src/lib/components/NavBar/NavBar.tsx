@@ -1,6 +1,8 @@
 import { Link, useRouteContext, useRouter, useRouterState } from '@tanstack/react-router'
 import { Home, LogOut, Palmtree, User } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { logoutSession } from '@/auth/utils/auth.utils'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher/LanguageSwitcher'
 import { ThemeToggle } from '@/components/ThemeToggle/ThemeToggle'
 import { APP } from '@/constants/app.constants'
 import { ROUTES } from '@/constants/route.constants'
@@ -20,6 +22,7 @@ const NavBar = () => {
   const { user, queryClient } = useRouteContext({
     from: '__root__'
   })
+  const { t } = useTranslation()
 
   return (
     <header className="fixed top-0 z-50 h-(--header-height) w-full bg-white dark:bg-stone-950">
@@ -28,10 +31,12 @@ const NavBar = () => {
           <div className="flex items-center space-x-2">
             <Link to={ROUTES.HOME} className="flex items-center gap-2 font-semibold text-lg md:text-base">
               <Palmtree className="mt-0.5 h-4 w-4" />
-              <span>{APP.NAME}</span>
+              <span>{t(APP.NAME)}</span>
             </Link>
           </div>
           <div className="flex items-center">
+            <LanguageSwitcher />
+            <div className="px-2" />
             <ThemeToggle />
             {user ? (
               <DropdownMenu>
@@ -56,7 +61,7 @@ const NavBar = () => {
                       await logoutSession(router, queryClient)
                     }}
                   >
-                    Sign Out
+                    {t('Sign out')}
                     <DropdownMenuShortcut>
                       <LogOut className="h-4 w-4" />
                     </DropdownMenuShortcut>
